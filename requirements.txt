@@ -1,0 +1,10 @@
+ipykernel
+numpy
+pandas
+#os
+matplotlib
+torch
+torchaudio
+torchvision
+#pytorch-transformers
+transformers
