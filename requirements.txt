@@ -1,7 +1,6 @@
 ipykernel
 numpy
 pandas
-os
 matplotlib
 torch
 torchvision
