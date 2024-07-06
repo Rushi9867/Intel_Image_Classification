@@ -1,10 +1,17 @@
 ipykernel
 numpy
 pandas
-#os
+os
 matplotlib
 torch
-torchaudio
 torchvision
-#pytorch-transformers
 transformers
+pyyaml==6.0
+dill==0.3.6
+from-root==1.0.2
+python-dotenv
+boto3==1.24.84
+botocore-stubs==1.27.86
+mypy-boto3-s3==1.34.138
+types-s3transfer==0.6.0post4
+-e .
