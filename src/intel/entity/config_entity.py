@@ -14,3 +14,7 @@ class DataIngestionConfig:
     train_path: str = os.path.join(data_path,TRAIN_FOLDER_NAME)
     test_path: str = os.path.join(data_path,TEST_FOLDER_NAME)
     pred_path: str = os.path.join(data_path,PRED_FOLDER_NAME)
+
+@dataclass
+class DataValidationConfig:
+    schema_file_path = os.path.join("config","schema.yaml")

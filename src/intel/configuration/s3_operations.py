@@ -1,9 +1,9 @@
 import os,sys, pickle 
-from src.intel.logger import logging 
+from src.intel.logger.logger import logging 
 from io import StringIO 
 from src.intel.configuration.aws_connection import S3Client 
 from mypy_boto3_s3.service_resource import Bucket 
-from src.intel.exception import IntelException 
+from src.intel.exception.exception import IntelException 
 from botocore.exceptions import ClientEroor 
 from pandas import DataFrame,read_csv 
 

@@ -1,5 +1,6 @@
 import sys 
 from src.intel.components.data_ingestion import DataIngestion
+from src.intel.components.data_validation import DataValidation
 from src.intel.logger.logger import logging 
 from src.intel.exception.exception import IntelException
 from src.intel.entity.config_entity import * 
@@ -20,11 +21,22 @@ class TrainPipeline:
             return data_ingestion_artifact 
         except Exception as e:
             raise IntelException(e,sys) from e
-
+    
+    def start_data_validation(self,data_ingestion_artifact : DataIngestionArtifacts) -> DataValidationArtifact:
+        try: 
+            logging.info("Entered the start_data_validation method of TrainPipeline class")
+            data_validation = DataValidation(data_ingestion_artifact=data_ingestion_artifact)
+            data_validation_artifact = data_validation.initiate_data_validation()
+            logging.info("Exited the start_data_validation method of TrainPipeline class")
+            return data_validation_artifact
+        except Exception as e:
+            raise IntelException(e,sys) from e
+             
     def run_pipeline(self)-> None:
         try: 
             logging.info("========================Training Pipeline Started===========================")
             data_ingestion_artifact = self.start_data_ingestion()
+            data_validation_artifact = self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)
             print(data_ingestion_artifact)
         except Exception as e:
             raise IntelException(e,sys) from e

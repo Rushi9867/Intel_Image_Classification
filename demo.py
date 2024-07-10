@@ -1,4 +1,4 @@
-from src.intel.training_pipeline import TrainPipeline 
+from src.intel.pipeline.training_pipeline import TrainPipeline 
 
 pipeline = TrainPipeline()
-pipeline.run_
+pipeline.run_pipeline()
