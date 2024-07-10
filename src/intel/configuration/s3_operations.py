@@ -33,7 +33,7 @@ class S3Operation:
         except Exception as e:
             raise IntelException(e,sys) from e
 
-    def read_data_from_s3(self,bucket_filename: str,bucket_name: str,output_file_path:str) -> None:
+    def read_data_from_s3(self,bucket_file_name: str,bucket_name: str,output_file_path:str) -> None:
         logging.info("Entered the read_data_from_s3 method of S3Operation class")
         try: 
             bucket = self.get_bucket(bucket_name)
